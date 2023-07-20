@@ -1,0 +1,42 @@
+Shiprocket.in API User Details:-
+
+
+Website: shiprocket.in
+
+vickyaggarwal74@gmail.com	
+
+Pass: vickyaggarwal7476%#
+
+API Link:- https://apidocs.shiprocket.in/?_gl=1*k2nsmf*_gcl_au*ODk5MTczMzA2LjE2ODk3NDY1MDE.
+
+
+
+
+Our Ecommerce Website Credentials:-
+
+1). Admin Panel Details:-
+
+URl: http://localhost/testingindus/admin/login
+
+Email: testing@gmail.com
+
+Pass: testing76%#
+
+Order Page:- http://localhost/testingindus/admin/orders
+
+I want to integrate shiprocket api in order page when admin change order status from 
+"Pending" to "In Progress"
+
+
+
+2). Customer Panel Login:-
+
+Login:- http://localhost/testingindus/login
+
+Email: upensuni@gmail.com
+
+Pass: upensuni12
+
+Order Page:- http://localhost/testingindus/user/orders
+
+I want to integrate shiprocket api, in customer order page when customer cancel order from their panel. 
