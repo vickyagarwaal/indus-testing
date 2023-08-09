@@ -7,6 +7,9 @@
 <meta name="description" content="{{$setting->meta_description}}">
 @endsection
 @section('content')
+
+@include('front.common.bradcum_banner')
+
     <!-- Page Title-->
 <div class="page-title">
     <div class="container">

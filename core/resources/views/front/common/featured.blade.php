@@ -3,7 +3,7 @@
              <div class="row">
                     <div class="col-lg-12 ">
                         <div class="section-title section-title2 section-title3section-title section-title2 section-title3">
-                            <h2 class="h3 text-center">Feartured Products</h2>
+                            <h2 class="h3 text-center">Top Selling Products</h2>
                         </div>
                     </div>
                 </div>
@@ -14,8 +14,10 @@
                     <div class="col-lg-12" id="type_product_view">
 
                         <div class="row" >
-                            @foreach ($products->orderBy('id','ASC')->get()  as $item)
-                                    <div class="slider-item col-md-3">
+                            @foreach ($featured->orderBy('id','ASC')->get()  as $item)
+
+
+                                    <div class="slider-item col-sm-6 col-xs-6  col-md-3">
                                         <div class="product-card ">
                                             <div class="product-thumb">
                                                 @if (!$item->is_stock())
@@ -34,7 +36,11 @@
                                             <div class="product-card-inner">
                                             <div class="product-card-body">
                                                 <h3 class="product-title"><a href="{{route('front.product',$item->slug)}}">
-                                                    {{ strlen(strip_tags($item->name)) > 35 ? substr(strip_tags($item->name), 0, 35) : strip_tags($item->name) }}
+                                                    <div class="hidden-sm-down"> {{ strlen(strip_tags($item->name)) > 29 ? substr(strip_tags($item->name), 0, 29) : strip_tags($item->name) }}
+                                                   </div>
+                                                    <div class="hidden-md-up"> 
+                                                        {{ strlen(strip_tags($item->name)) > 25 ? substr(strip_tags($item->name), 0, 25) : strip_tags($item->name) }}
+                                                   </div>
                                                 </a></h3>
                                                 <!--<div class="rating-stars">
                                                     {!! renderStarRating($item->reviews->avg('rating')) !!}
@@ -67,6 +73,15 @@
                         </div>
                     </div>
 
+
+<div class="col-sm-12 text-center">
+                <br/>          <br/>                         
+ <div class="p-action-button">
+  <a href="{{url('products')}}" class=" btn-primary2 m-0 a-t-c-mr" id="add_to_cart">View All</a>
+                                                              
+                            </div>
+
+                        </div>
                 </div>
             </div>
         </section>

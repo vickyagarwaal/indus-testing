@@ -15,31 +15,15 @@
       </div>
       <nav class="list-group">
         <a class="list-group-item <?php echo e(request()->is('user/dashboard') ? 'active' : ''); ?>" href="<?php echo e(route('user.dashboard')); ?>"><i class="icon-command"></i><?php echo e(__('Dashboard')); ?></a>
-       
+        <a class="list-group-item <?php echo e(request()->is('user/profile') ? 'active' : ''); ?>" href="<?php echo e(route('user.profile')); ?>"><i class="icon-user"></i><?php echo e(__('Profile')); ?></a>
+        <a class="list-group-item <?php echo e(request()->is('user/ticket') ? 'active' : ''); ?>" href="<?php echo e(route('user.ticket')); ?>"><i class="icon-file-text"></i><?php echo e(__('Support Ticket')); ?></a>
         <a class="list-group-item with-badge <?php echo e(request()->is('user/orders') ? 'active' : ''); ?>" href="<?php echo e(route('user.order.index')); ?>"><i class="icon-shopping-bag"></i><?php echo e(__('Orders')); ?><span class="badge badge-default badge-pill"><?php echo e($user->orders->count()); ?></span></a>
-     
+        <a class="list-group-item <?php echo e(request()->is('user/addresses') ? 'active' : ''); ?>" href="<?php echo e(route('user.address')); ?>"><i class="icon-map-pin"></i><?php echo e(__('Address')); ?></a>
+        <a class="list-group-item  with-badge <?php echo e(request()->is('user/wishlists') ? 'active' : ''); ?>" href="<?php echo e(route('user.wishlist.index')); ?>"><i class="icon-heart"></i><?php echo e(__('Wishlist')); ?><span class="badge badge-default badge-pill"><?php echo e($user->wishlists->count()); ?></span></a>
         <a class="list-group-item with-badge" href="<?php echo e(route('user.logout')); ?>"><i class="icon-log-out"></i><?php echo e(__('Log out')); ?></a>
       </nav>
     </aside>
 
-    <div class="modal" tabindex="-1">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title"><?php echo e(__('Remove Account')); ?></h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p><?php echo e(__('Are You Sure?')); ?></p>
-            <p><?php echo e(__('Do you remove you account?')); ?></p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?php echo e(__('Close')); ?></button>
-            <a href="<?php echo e(route('user.account.remove')); ?>" type="button" class="btn btn-danger"><?php echo e(__('Remove Account')); ?></a>
-          </div>
-        </div>
-      </div>
-    </div>
 
   </div>
 <?php /**PATH /opt/lampp/htdocs/testingindus/core/resources/views/includes/user_sitebar.blade.php ENDPATH**/ ?>

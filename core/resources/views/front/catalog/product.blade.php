@@ -23,7 +23,7 @@
             <ul class="breadcrumbs">
                 <li><a href="{{route('front.index')}}">{{__('Home')}}</a> </li>
                 <li class="separator"></li>
-<li><a href="{{route('front.catalog')}}">Shop All Products</a>
+                <li> <a href="{{url('products?category=')}}{{$slug_Category->slug}}">{{$slug_Category->name}} </a></li>
                 </li>
                 <li class="separator"></li>
                 <li>{{$item->name}}</li>              </ul>
@@ -83,9 +83,9 @@
         @php
         function renderStarRating($rating,$maxRating=5) {
 
-            $fullStar = "<i class = 'far fa-star filled'></i>";
-            $halfStar = "<i class = 'far fa-star-half filled'></i>";
-            $emptyStar = "<i class = 'far fa-star'></i>";
+            $fullStar = "<i class = 'fa fa-star filled'></i>";
+            $halfStar = "<i class = 'fa fa-star-half filled'></i>";
+            $emptyStar = "<i class = 'fa fa-star'></i>";
             $rating = $rating <= $maxRating?$rating:$maxRating;
 
             $fullStarCount = (int)$rating;
@@ -163,11 +163,17 @@
                                 <input type="hidden" value="3333" id="current_stock">
                             </div>
                             @endif
-                            <div class="p-action-button">
+
+                          
+
+                        </div>
+
+                          <div class="p-action-button">
+                             <br/>
                               @if ($item->item_type != 'affiliate')
                                 @if ($item->is_stock())
-                                <button class="btn btn-primary m-0 a-t-c-mr" id="add_to_cart"><i class="icon-bag"></i><span>{{ __('Add to Cart') }}</span></button>
-                                <button class="btn btn-primary m-0" id="but_to_cart"><i class="icon-bag"></i><span>{{ __('Buy Now') }}</span></button>
+                                <button class="btn btn-primary add_cardt m-0 a-t-c-mr" id="add_to_cart"><i class="icon-bag"></i><span>{{ __('Add to Cart') }}</span></button>
+                                <button class="btn btn-primary add_cardt vsttt m-0" id="but_to_cart"><i class="icon-bag"></i><span>{{ __('Buy Now') }}</span></button>
                                 @else
                                     <button class="btn btn-primary m-0"><i class="icon-bag"></i><span>{{__('Out of stock')}}</span></button>
                                 @endif
@@ -176,8 +182,6 @@
                               @endif
 
                             </div>
-
-                        </div>
                     </div>
 
                     <div class="div">
@@ -188,7 +192,7 @@
                                 </div>
                             @endif
 
-                                <div class="pt-1 mb-1"><span class="text-medium">Product {{__('Category')}}:</span>
+                               <!-- <div class="pt-1 mb-1"><span class="text-medium">Product {{__('Category')}}:</span>
                                     <a href="{{route('front.catalog').'?category='.$item->category->slug}}">{{$item->category->name}}</a>
                                         @if ($item->subcategory->name)
                                         /
@@ -198,7 +202,7 @@
                                         /
                                         @endif
                                     <a href="{{route('front.catalog').'?childcategory='.$item->childcategory->slug}}">{{$item->childcategory->name}}</a>
-                                </div>
+                                </div> -->
                                
                                
                         </div>
@@ -233,10 +237,10 @@
         <br/>
 <hr/>
 <br/>
-        @include('front.common.counter')
+@include('front.common.crafted_in')
 
-        <div class=" padding-top-1x mb-3 tab_Bar" id="details ">
-            <div class="col-lg-12">
+        <div class=" padding-top-1x mb-3 " id="details">
+            <div class="col-lg-12 tab_Bar">
             <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item" role="presentation">
                     <a class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab" aria-controls="description" aria-selected="true">{{__('Descriptions')}}</a>
@@ -244,7 +248,9 @@
                 <li class="nav-item" role="presentation">
                     <a class="nav-link" id="specification-tab" data-bs-toggle="tab" data-bs-target="#specification" type="button" role="tab" aria-controls="specification" aria-selected="false">{{__('Specifications')}}</a>
                 </li>
-
+<li class="nav-item" role="presentation">
+                    <a class="nav-link" id="return-tab" data-bs-toggle="tab" data-bs-target="#return" type="button" role="tab" aria-controls="return" aria-selected="false">Return Policy</a>
+                </li>
                 <li class="nav-item" role="presentation">
                     <a class="nav-link" href="#reviews" type="button" role="tab" aria-controls="reviews" aria-selected="false">Reviews</a>
                 </li>
@@ -253,6 +259,16 @@
                 <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab"">
                 {!! $item->details !!}
                 </div>
+                <div class="tab-pane fade show" id="return" role="tabpanel" aria-labelledby="return-tab">
+<ul>
+    <li>Free replacement will be provided within 7 days if the product is delivered in defective/damaged</li>
+    <li>
+ Refunds for Prepaid orders would directly be initiated to source account.</li>
+
+<li>Defective Products, Wrong Products or Damaged Products issue should be raised within 24 hrs of delivery</li>
+<li>Return Policies may vary based on products and promotions.For more details on our Returns Policies, please <a href="{{url('return-policy')}}">click here</a></li>
+</ul>
+</div>
                 <div class="tab-pane fade show" id="specification" role="tabpanel" aria-labelledby="specification-tab">
                 <div class="comparison-table">
                     <table class="table table-bordered">
@@ -285,6 +301,8 @@
     </div>
 </div>
 
+ @include('front.common.times_quartz_20')
+ @include('front.common.testimonial')
 
   <!-- Reviews-->
     <div  id="reviews">
@@ -314,7 +332,7 @@
                           <div class="rating-stars">
                             @php
                                 for($i=0; $i<$review->rating;$i++){
-                                 echo "<i class = 'far fa-star filled'></i>";
+                                 echo "<i class = 'fa fa-star filled'></i>";
                                 }
                             @endphp
                           </div>
@@ -417,7 +435,7 @@
                             <div class="product-card-body">
                               <div class="product-category"><a href="{{route('front.catalog').'?category='.$related->category->slug}}">{{$related->category->name}}</a></div>
                               <h3 class="product-title"><a href="{{route('front.product',$related->slug)}}">
-                                {{ strlen(strip_tags($related->name)) > 35 ? substr(strip_tags($related->name), 0, 35) : strip_tags($related->name) }}
+                                {{ strlen(strip_tags($related->name)) > 29 ? substr(strip_tags($related->name), 0, 29) : strip_tags($related->name) }}
                             </a></h3>
                               <h4 class="product-price">
                                 @if ($related->previous_price !=0)

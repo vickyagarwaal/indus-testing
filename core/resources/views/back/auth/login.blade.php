@@ -6,12 +6,14 @@
             <div class="user_card">
                 <div class="d-flex justify-content-center">
                     <div class="brand_logo_container">
+                        <img src=" {{asset('assets/images/times-quartz-admin.png')}}" class="brand_logo" alt="Logo">
                     </div>
                 </div>
                 <div class="d-flex justify-content-center form_container">
                     <form action="{{ route('back.login.submit') }}" method="POST">
 
                          @csrf
+<h4 class="text-center"><b>TimesQuartz</b></h4>
 <h5 class="text-center"> Admin Panel</h5>
 
 <br/>

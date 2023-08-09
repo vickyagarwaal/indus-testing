@@ -83,7 +83,12 @@ class FrontendController extends Controller
                 'banner_secend'  => json_decode($home_customize->banner_secend,true),
                 'banner_third'   => json_decode($home_customize->banner_third,true),
                 'brands'   => Brand::whereStatus(1)->whereIsPopular(1)->get(),
-                'products' => Item::with('category')->where('is_type','!=','feature')->whereStatus(1),
+                'products' => Item::with('category')->whereStatus(1),
+                               // 'products' => Item::with('category')->where('is_type','!=','feature')->whereStatus(1),
+                'campaign_items' => CampaignItem::with('item')->whereStatus(1)->whereIsFeature(1)->orderby('id','desc')->get(),
+
+              'featured' => Item::with('category')->where('is_type','=','feature')->whereStatus(1),
+
                  'services' => Service::orderby('id','desc')->get(),
                 'home_page4_banner' => json_decode($home_customize->home_page4,true),
                 'category_vkis' => $category_vkis,
@@ -92,7 +97,9 @@ class FrontendController extends Controller
 
 	}
 
-
+ public function buy_From(){
+        return view('front.buy_From');
+    }
 
     public function review_submit(){
         return view('back.overlay.index');
@@ -109,12 +116,14 @@ class FrontendController extends Controller
     public function product($slug)
     {
 
+        
+
         $item = Item::with('category')->whereStatus(1)->whereSlug($slug)->firstOrFail();
         $video = explode('=',$item->video);
         return view('front.catalog.product',[
             'item'          => $item,
            'services' => Service::orderby('id','desc')->get(),
-
+           'slug_Category'=>Category::where('id', $item->category_id)->firstOrFail(),
             'reviews'       => $item->reviews()->where('status',1)->paginate(3),
             'galleries'     => $item->galleries,
             'video'         => $item->video ? end($video) : '',

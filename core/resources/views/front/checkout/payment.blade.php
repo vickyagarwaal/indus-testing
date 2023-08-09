@@ -3,6 +3,9 @@
     {{__('Payment')}}
 @endsection
 @section('content')
+
+@include('front.common.bradcum_banner')
+
     <!-- Page Title-->
 <div class="page-title">
     <div class="container">
@@ -15,6 +18,8 @@
       </div>
     </div>
   </div>
+
+
   <!-- Page Content-->
   <div class="container padding-bottom-3x mb-1  checkut-page">
     <div class="row">

@@ -9749,3 +9749,8 @@ div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:las
         padding: 60px 15px !important;
     }
 }
+
+.categrot label{
+    color: red !important;
+    font-size: 20pt !important;
+}

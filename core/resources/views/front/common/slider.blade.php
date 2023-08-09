@@ -2,8 +2,8 @@
             <div class="background"></div>
             <div class="heroarea-slider owl-carousel">
                 @foreach ($sliders as $slider)
-                <div class="item" style="background: url('{{ asset('assets/images/' . $slider->photo) }}')">
-                  
+                <div class="item" >
+                  <img src="{{ asset('assets/images/' . $slider->photo) }}">
                 </div>
                 @endforeach
             </div>

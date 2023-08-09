@@ -20,12 +20,12 @@
 
                     <div class="card-body page_id px-4">
                    <h1 class="d-block text-center page_heading"><b>{{$page->title}}</b></h1>
-<p class="text-center know">The smarter way to stay connected | Indus <b><span style="color:blue;">R</span>ise </b></p>
+<p class="text-center know">The smarter way to stay connected | Times <b><span style="color:#cf391c;">Q</span>uartz </b></p>
 <br/>
 <hr/>
 <br/><br/>
                         <div class="d-page-content">
-                            {!! $page->details !!}
+                            {!! $page->details !!} <br/>
                         </div>
                     </div>
                 </div>

@@ -9,7 +9,6 @@
 
 @section('content')
     <!-- Page Title-->
-@include('front.common.bradcum_banner')
 
 
 <div class="page-title">
@@ -17,8 +16,8 @@
       <div class="row">
           <div class="col-lg-12">
             <ul class="breadcrumbs">
-                <li><a href="{{route('front.index')}}">{{__('Home')}}</a> </li>
-                <li class="separator"></li>
+                <li><a href="{{route('front.index')}}">{{__('Home')}} ></a> </li>
+                
                 <li>Products</li>
               </ul>
           </div>
@@ -26,7 +25,7 @@
     </div>
   </div>
   <!-- Page Content-->
-  <div class="container padding-bottom-1x mb-1">
+  <div class="container-fluid padding-bottom-1x mb-1">
         <div class="row">
             <div class="col-lg-12">
                 <div class="shop-top-filter-wrapper">

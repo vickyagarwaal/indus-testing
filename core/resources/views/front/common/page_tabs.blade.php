@@ -15,7 +15,7 @@
                 </a>
             </div>
                     <div class="  intro text-center">
-                <a href="{{url('track/order')}}" class=" mb-4 faq-box">
+                <a target="_blank" href="https://timesquartz.shiprocket.co" class=" mb-4 faq-box">
                     <img src="{{asset('assets/images/data/order-tracking.png')}}">
                     <div class="card-body">
                         <h4 class="card-title">Track Order </h4>
@@ -31,10 +31,10 @@
                 </a>
             </div>
                <div class="  intro text-center">
-                <a href="{{url('warranty')}}" class=" mb-4 faq-box">
+                <a href="{{url('shipping-policy')}}" class=" mb-4 faq-box">
                     <img src="{{asset('assets/images/data/mark.png')}}">
                     <div class="card-body">
-                        <h4 class="card-title">Warranty </h4>
+                        <h4 class="card-title">Shipping </h4>
                     </div>
                 </a>
             </div>

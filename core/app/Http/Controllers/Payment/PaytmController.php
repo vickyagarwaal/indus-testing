@@ -26,7 +26,7 @@ class PaytmController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'state_id' => State::count() > 0  ? 'required' : '',
+            'state_id' => State::whereStatus(1)->count() > 0  ? 'required' : '',
         ]);
 
         if(Session::has('currency')){
@@ -111,6 +111,7 @@ class PaytmController extends Controller
     public function handlePaytmRequest($order_id, $amount)
     {
         $data = PaymentSetting::whereUniqueKeyword('paytm')->first();
+      
         $paydata = $data->convertJsonData();
         // Load all functions of encdec_paytm.php and config-paytm.php
         $this->getAllEncdecFunc();
@@ -407,7 +408,7 @@ class PaytmController extends Controller
         $order_id = $request['ORDERID'];
 
         if ( 'TXN_SUCCESS' === $request['STATUS'] ) {
-			$transaction_id = $request['TXNID'];
+            $transaction_id = $request['TXNID'];
             
             $order = Order::where('transaction_number', $order_id )->first();
             
@@ -509,10 +510,10 @@ class PaytmController extends Controller
 
             }
 
-		} else if( 'TXN_FAILURE' === $request['STATUS'] ){
+        } else if( 'TXN_FAILURE' === $request['STATUS'] ){
             $order = Order::where('transaction_number', $order_id )->delete();
             return redirect()->route('front.checkout.cancle');
-		}else{
+        }else{
             $order = Order::where('transaction_number', $order_id )->delete();
             return redirect()->route('front.checkout.redirect');
 

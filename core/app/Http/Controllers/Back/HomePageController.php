@@ -84,11 +84,20 @@ class HomePageController extends Controller
             'img1' => 'image',
             'img2' => 'image',
             'img3' => 'image',
+             'img4' => 'image',
+ 'img4' => 'image',
+  'img6' => 'image',
+   'img7' => 'image',
             'firsturl1' => 'required|max:200',
             'firsturl2' => 'required|max:200',
             'firsturl3' => 'required|max:200',
+            'firsturl4' => 'required|max:200',
+            'firsturl5' => 'required|max:200',
+            'firsturl6' => 'required|max:200',
+            'firsturl7' => 'required|max:200',
+
         ]);
-        $all_images_names = ['img1','img2','img3'];
+        $all_images_names = ['img1','img2','img3','img4','img5','img6','img7'];
 
         $input = $request->all();
 

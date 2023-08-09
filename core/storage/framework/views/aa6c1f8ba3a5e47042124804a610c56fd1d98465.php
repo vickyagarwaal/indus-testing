@@ -47,7 +47,10 @@
           <div class="col-lg-8 dashboard_tab">
                 <div class="row u-d-d">
 <br/>
-                    <h3 class="text-center">Welcome To IndusRise.com- <span style="color:blue">India's Leading Wearables Brand</span></h3>
+<div class="times_dashbaoard text-center">
+                    <h3 >Welcome To TimesQuartz.com Dashboard- India's Leading Watches, Trolley Bags, Rucksack & Duffle Bag Brand</h3>
+                    <h4>Customer Care Support: <a class="underline" href="tel:<?php echo e($setting->footer_phone); ?>"><?php echo e($setting->footer_phone); ?></a></h4>
+                </div>
                     <div class="col-md-4 col-xs-6 mb-1">
                         <div class="card round">
                             <div class="card-body text-center">

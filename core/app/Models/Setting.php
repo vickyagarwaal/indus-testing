@@ -50,6 +50,7 @@ class Setting extends Model
         'is_attribute_search',
         'is_range_search',
         'footer_phone',
+        'support_phone',
         'footer_address',
         'footer_email',
         'footer_gateway_img',

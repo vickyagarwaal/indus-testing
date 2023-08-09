@@ -27,9 +27,15 @@
     ?>
 <?php echo $__env->make('front.common.slider', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-    
 
+
+ <div class="container-fluid">
+    <br/>
    
+ <div class="col-md-12 text-center">
+    <img class="img-responsive img-thumbnail" src="<?php echo e(asset('assets/images/'.$setting->discount_banner)); ?>" alt="TimesQuartz.com">
+ </div>
+ </div>
 
 <?php echo $__env->make('front.common.newly_launched', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
@@ -39,19 +45,16 @@
  <br/>
  <?php /* @include('front.common.flash_deal') */ ?>
 
-    <?php echo $__env->make('front.common.banner_ad', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <?php echo $__env->make('front.common.categories', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('front.common.featured', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 
 <br/>
-<?php echo $__env->make('front.common.categories', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+ 
+<?php echo $__env->make('front.common.testimonial', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-<div class="col-md-12 text-center">
-   <a href="<?php echo e(url('products')); ?>">  <img class="img-responsive" src="<?php echo e(asset('assets/images/'.$setting->discount_banner)); ?>" alt="<?php echo e($setting->title); ?>"></a>
- </div>
-<br/>
+<?php echo $__env->make('front.common.crafted_in', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-    <?php echo $__env->make('front.common.sellingplatform', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 <?php $__env->stopSection(); ?>
 

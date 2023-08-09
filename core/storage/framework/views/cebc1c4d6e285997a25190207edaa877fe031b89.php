@@ -3,7 +3,7 @@
              <div class="row">
                     <div class="col-lg-12 ">
                         <div class="section-title section-title2 section-title3section-title section-title2 section-title3">
-                            <h2 class="h3">Newly Launched</h2>
+                            <h2 class="h3 text-center">Newly Arrived</h2>
                         </div>
                     </div>
                 </div>
@@ -13,9 +13,11 @@
                     </div>
                     <div class="col-lg-12" id="type_product_view">
 
-                        <div class="features-slider  owl-carousel" >
-                            <?php $__currentLoopData = $products->orderBy('id','DESC')->get(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <div class="slider-item">
+                        <div class="row" >
+                            <?php $__currentLoopData = $products->orderBy('id','ASC')->get(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
+
+                                    <div class="slider-item col-sm-6 col-xs-6  col-md-3">
                                         <div class="product-card ">
                                             <div class="product-thumb">
                                                 <?php if(!$item->is_stock()): ?>
@@ -34,20 +36,25 @@
                                             <div class="product-card-inner">
                                             <div class="product-card-body">
                                                 <h3 class="product-title"><a href="<?php echo e(route('front.product',$item->slug)); ?>">
-                                                    <?php echo e(strlen(strip_tags($item->name)) > 35 ? substr(strip_tags($item->name), 0, 35) : strip_tags($item->name)); ?>
+                                                   <div class="hidden-sm-down"> <?php echo e(strlen(strip_tags($item->name)) > 29 ? substr(strip_tags($item->name), 0, 29) : strip_tags($item->name)); ?>
 
+                                                   </div>
+                                                    <div class="hidden-md-up"> 
+                                                        <?php echo e(strlen(strip_tags($item->name)) > 25 ? substr(strip_tags($item->name), 0, 25) : strip_tags($item->name)); ?>
+
+                                                   </div>
                                                 </a></h3>
                                                 <!--<div class="rating-stars">
                                                     <?php echo renderStarRating($item->reviews->avg('rating')); ?>
 
                                                 </div>-->
                                                 <h4 class="product-price">
-                                                <?php if($item->previous_price != 0): ?>
-                                                <del><?php echo e(PriceHelper::setPreviousPrice($item->previous_price)); ?></del>
-                                                <?php endif; ?> 
+                                               <?php /* @if ($item->previous_price != 0)
+                                                <del>{{PriceHelper::setPreviousPrice($item->previous_price)}}</del>
+                                                @endif  */ ?>
 
                                                 <?php if($item->previous_price && $item->previous_price !=0): ?>
-                                            <span style="color:green"><?php echo e(PriceHelper::DiscountPercentage($item)); ?> off  </span>
+                                            <span ><?php echo e(PriceHelper::DiscountPercentage($item)); ?> off  </span>
                                                 <?php endif; ?>
                                                 <?php echo e(PriceHelper::grandCurrencyPrice($item)); ?>
 
@@ -55,12 +62,12 @@
                                                  
                                                 </h4>
 <br/>
-                                                 <?php if($item->is_stock()): ?>
-    <a class="product-button add_to_single_cart btn-grad   btn-block "  data-target="<?php echo e($item->id); ?>" href="javascript:;"  title="<?php echo e(__('To Cart')); ?>"><i class="icon-shopping-cart"></i> Add to Cart
+                                          <?php /*      @if ($item->is_stock())
+  <a class="product-button add_to_single_cart btn-grad   btn-block "  data-target="{{ $item->id }}" href="javascript:;"  title="{{__('To Cart')}}"><i class="icon-shopping-cart"></i> Add to Cart
     </a>
-    <?php else: ?>
-    <a class="product-button btn  btn-grad btn-block mt-2" href="<?php echo e(route('front.product',$item->slug)); ?>" title="<?php echo e(__('Details')); ?>"><i class="icon-arrow-right"></i> Add to Cart</a>
-    <?php endif; ?>
+    @else
+    <a class="product-button btn  btn-grad btn-block mt-2" href="{{route('front.product',$item->slug)}}" title="{{__('Details')}}"><i class="icon-arrow-right"></i> Add to Cart</a>
+    @endif */ ?>
                                             </div>
 
                                             </div>
@@ -69,7 +76,15 @@
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </div>
                     </div>
+<div class="col-sm-12 text-center">
+                      <br/>                        
+ <div class="p-action-button">
+  <a href="<?php echo e(url('products')); ?>" class=" btn-primary2 m-0 a-t-c-mr" id="add_to_cart">View All</a>
+                                                              
+                            </div>
+                            <br/>
 
+                        </div>
                 </div>
             </div>
         </section><?php /**PATH /opt/lampp/htdocs/indusrise/core/resources/views/front/common/newly_launched.blade.php ENDPATH**/ ?>

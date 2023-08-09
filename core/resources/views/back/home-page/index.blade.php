@@ -46,7 +46,7 @@
                                 @include('alerts.alerts')
                                 @csrf
                                         <div class="form-group">
-                                            <label for="name">{{ __('Image 1') }} *</label>
+                                            <label for="name">{{ __('Category 1') }} *</label>
                                             <br>
                                                 <img class="admin-img"
                                                     src="{{isset($hero_banner['img1']) ? asset('assets/images/'.$hero_banner['img1']) : asset('assets/images/placeholder.png') }}"
@@ -81,7 +81,7 @@
                                         <hr>
 
                                         <div class="form-group">
-                                            <label for="name">{{ __('Image 2') }} *</label>
+                                            <label for="name">{{ __('Category 2') }} *</label>
                                             <br>
                                                 <img class="admin-img"
                                                     src="{{isset($hero_banner['img2']) ? asset('assets/images/'.$hero_banner['img2']) : asset('assets/images/placeholder.png') }}"
@@ -122,8 +122,8 @@
                         <div class="tab-pane fade show " id="v-pills-t1" role="tabpanel" aria-labelledby="v-pills-t1-tab">
                             <form class="admin-form" action="{{route('back.first.banner.update')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                        <div class="form-group">
-                                            <label for="name">{{ __('Image 1') }} *</label>
+                                        <div class="form-group categrot">
+                                            <label for="name" >{{ __('Category 1') }} *</label>
                                             <br>
                                                 <img class="admin-img"
                                                     src="{{  asset('assets/images/'.$first_banner['img1']) }}"
@@ -157,8 +157,8 @@
                                         </div>
                                         <hr>
 
-                                        <div class="form-group">
-                                            <label for="name">{{ __('Image 2') }} *</label>
+                                        <div class="form-group categrot">
+                                            <label for="name">{{ __('Category 2') }} *</label>
                                             <br>
                                                 <img class="admin-img"
                                                     src="{{  asset('assets/images/'.$first_banner['img2']) }}"
@@ -192,8 +192,8 @@
                                         </div>
                                         <hr>
 
-                                        <div class="form-group">
-                                            <label for="name">{{ __('Image 3') }} *</label>
+                                        <div class="form-group categrot">
+                                            <label for="name">{{ __('Category 3') }} *</label>
                                             <br>
                                                 <img class="admin-img"
                                                     src="{{  asset('assets/images/'.$first_banner['img3']) }}"
@@ -221,11 +221,161 @@
                                         </div>
 
 
-                                        <div class="form-group">
+                                        <div class="form-group ">
                                             <label for="firsturl3">{{ __('URL 3') }} *</label>
                                             <input type="text" name="firsturl3" class="form-control" id="firsturl3"
                                                 placeholder="{{ __('Enter Banner Url') }}" value="{{$first_banner['firsturl3']}}" >
                                         </div>
+
+                                         <div class="form-group categrot">
+                                            <label for="name">{{ __('Category 4') }} *</label>
+                                            <br>
+                                                <img class="admin-img"
+                                                    src="{{  asset('assets/images/'.$first_banner['img4']) }}"
+                                                    alt="No Image Found">
+                                            <br>
+                                            <span class="mt-1">{{ __('Image Size Should Be 496 x 204.') }}</span>
+                                        </div>
+                                        <div class="form-group position-relative">
+                                            <label class="file">
+                                                <input type="file"  accept="image/*"  class="upload-photo" name="img4" id="file"
+                                                    aria-label="File browser example">
+                                                <span class="file-custom text-left">{{ __('Upload Image...') }}</span>
+                                            </label>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="title4">{{ __('Title') }} *</label>
+                                            <input type="text" name="title4" class="form-control" id="title4"
+                                                placeholder="{{ __('Enter Title') }}"  value="{{isset($first_banner['title4']) ? $first_banner['title4'] : ''}}" >
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="subtitle4">{{ __('Subtitle') }} *</label>
+                                            <input type="text" name="subtitle4" class="form-control" id="subtitle4"
+                                                placeholder="{{ __('Enter Subtitle') }}"  value="{{isset($first_banner['subtitle4']) ? $first_banner['subtitle4'] : ''}}" >
+                                        </div>
+
+
+                                        <div class="form-group ">
+                                            <label for="firsturl4">{{ __('URL 4') }} *</label>
+                                            <input type="text" name="firsturl4" class="form-control" id="firsturl4"
+                                                placeholder="{{ __('Enter Banner Url') }}" value="{{$first_banner['firsturl4']}}" >
+                                        </div>
+
+
+
+                                          <div class="form-group categrot">
+                                            <label for="name">{{ __('Category 5') }} *</label>
+                                            <br>
+                                                <img class="admin-img"
+                                                    src="{{  asset('assets/images/'.$first_banner['img5']) }}"
+                                                    alt="No Image Found">
+                                            <br>
+                                            <span class="mt-1">{{ __('Image Size Should Be 496 x 204.') }}</span>
+                                        </div>
+                                        <div class="form-group position-relative">
+                                            <label class="file">
+                                                <input type="file"  accept="image/*"  class="upload-photo" name="img5" id="file"
+                                                    aria-label="File browser example">
+                                                <span class="file-custom text-left">{{ __('Upload Image...') }}</span>
+                                            </label>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="title5">{{ __('Title') }} *</label>
+                                            <input type="text" name="title5" class="form-control" id="title5"
+                                                placeholder="{{ __('Enter Title') }}"  value="{{isset($first_banner['title5']) ? $first_banner['title5'] : ''}}" >
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="subtitle5">{{ __('Subtitle') }} *</label>
+                                            <input type="text" name="subtitle5" class="form-control" id="subtitle5"
+                                                placeholder="{{ __('Enter Subtitle') }}"  value="{{isset($first_banner['subtitle5']) ? $first_banner['subtitle5'] : ''}}" >
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label for="firsturl5">{{ __('URL 5') }} *</label>
+                                            <input type="text" name="firsturl5" class="form-control" id="firsturl5"
+                                                placeholder="{{ __('Enter Banner Url') }}" value="{{$first_banner['firsturl5']}}" >
+                                        </div>
+                                        <hr/>
+
+
+ <div class="form-group categrot">
+                                            <label for="name">{{ __('Category 6') }} *</label>
+                                            <br>
+                                                <img class="admin-img"
+                                                    src="{{  asset('assets/images/'.$first_banner['img6']) }}"
+                                                    alt="No Image Found">
+                                            <br>
+                                            <span class="mt-1">{{ __('Image Size Should Be 496 x 204.') }}</span>
+                                        </div>
+                                        <div class="form-group position-relative">
+                                            <label class="file">
+                                                <input type="file"  accept="image/*"  class="upload-photo" name="img6" id="file"
+                                                    aria-label="File browser example">
+                                                <span class="file-custom text-left">{{ __('Upload Image...') }}</span>
+                                            </label>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="title6">{{ __('Title') }} *</label>
+                                            <input type="text" name="title6" class="form-control" id="title6"
+                                                placeholder="{{ __('Enter Title') }}"  value="{{isset($first_banner['title6']) ? $first_banner['title6'] : ''}}" >
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="subtitle6">{{ __('Subtitle') }} *</label>
+                                            <input type="text" name="subtitle6" class="form-control" id="subtitle6"
+                                                placeholder="{{ __('Enter Subtitle') }}"  value="{{isset($first_banner['subtitle6']) ? $first_banner['subtitle6'] : ''}}" >
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label for="firsturl6">{{ __('URL 6') }} *</label>
+                                            <input type="text" name="firsturl6" class="form-control" id="firsturl6"
+                                                placeholder="{{ __('Enter Banner Url') }}" value="{{$first_banner['firsturl6']}}" >
+                                        </div>
+
+       <hr/>
+
+
+ <div class="form-group categrot">
+                                            <label for="name">{{ __('Category 7') }} *</label>
+                                            <br>
+                                                <img class="admin-img"
+                                                    src="{{  asset('assets/images/'.$first_banner['img7']) }}"
+                                                    alt="No Image Found">
+                                            <br>
+                                            <span class="mt-1">{{ __('Image Size Should Be 496 x 204.') }}</span>
+                                        </div>
+                                        <div class="form-group position-relative">
+                                            <label class="file">
+                                                <input type="file"  accept="image/*"  class="upload-photo" name="img7" id="file"
+                                                    aria-label="File browser example">
+                                                <span class="file-custom text-left">{{ __('Upload Image...') }}</span>
+                                            </label>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="title7">{{ __('Title') }} *</label>
+                                            <input type="text" name="title7" class="form-control" id="title7"
+                                                placeholder="{{ __('Enter Title') }}"  value="{{isset($first_banner['title7']) ? $first_banner['title7'] : ''}}" >
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="subtitle7">{{ __('Subtitle') }} *</label>
+                                            <input type="text" name="subtitle7" class="form-control" id="subtitle7"
+                                                placeholder="{{ __('Enter Subtitle') }}"  value="{{isset($first_banner['subtitle7']) ? $first_banner['subtitle7'] : ''}}" >
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label for="firsturl7">{{ __('URL 7') }} *</label>
+                                            <input type="text" name="firsturl7" class="form-control" id="firsturl7"
+                                                placeholder="{{ __('Enter Banner Url') }}" value="{{$first_banner['firsturl7']}}" >
+                                        </div>
+
+
+
 
                                     <div class="form-group">
                                             <button type="submit" class="btn btn-secondary ">{{ __('Submit') }}</button>

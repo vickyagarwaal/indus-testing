@@ -296,6 +296,8 @@ class CheckoutController extends Controller
         $data['shipping'] = $shipping;
         $data['tax'] = $total_tax;
         $data['payments'] = PaymentSetting::whereStatus(1)->get();
+
+
         return view('front.checkout.payment',$data);
     }
 
@@ -379,7 +381,10 @@ class CheckoutController extends Controller
             if($payment_redirect){
 
                 if($payment['status']){
+
+                    
                     return redirect()->away($payment['link']);
+
                 }else{
                     Session::put('message',$payment['message']);
                     return redirect()->route('front.checkout.cancle');

@@ -7,6 +7,9 @@
 <meta name="description" content="<?php echo e($setting->meta_description); ?>">
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
+
+<?php echo $__env->make('front.common.bradcum_banner', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
     <!-- Page Title-->
 <div class="page-title">
     <div class="container">

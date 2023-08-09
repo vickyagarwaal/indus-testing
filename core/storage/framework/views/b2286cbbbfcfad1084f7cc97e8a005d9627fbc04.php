@@ -50,9 +50,15 @@
                         <div class="product-card-body">
                             
                             <h3 class="product-title"><a href="<?php echo e(route('front.product',$item->slug)); ?>">
-                                <?php echo e(strlen(strip_tags($item->name)) > $name_string_count ? substr(strip_tags($item->name), 0, 38) : strip_tags($item->name)); ?>
 
-                            </a></h3>
+ <div class="hidden-sm-down"> <?php echo e(strlen(strip_tags($item->name)) > 29 ? substr(strip_tags($item->name), 0, 29) : strip_tags($item->name)); ?>
+
+                                                   </div>
+                                                    <div class="hidden-md-up"> 
+                                                        <?php echo e(strlen(strip_tags($item->name)) > 25 ? substr(strip_tags($item->name), 0, 25) : strip_tags($item->name)); ?>
+
+                                                   </div>
+                                                                               </a></h3>
                             
                             <h4 class="product-price">
                                 <?php if($item->previous_price !=0): ?>
@@ -101,8 +107,13 @@
                                         <div class="product-card-body">
                                             <div class="product-category"><a href="<?php echo e(route('front.catalog').'?category='.$item->category->slug); ?>"><?php echo e($item->category->name); ?></a></div>
                                             <h3 class="product-title"><a href="<?php echo e(route('front.product',$item->slug)); ?>">
-                                                <?php echo e(strlen(strip_tags($item->name)) > $name_string_count ? substr(strip_tags($item->name), 0, 52) .'...': strip_tags($item->name)); ?>
+                                                <div class="hidden-sm-down"> <?php echo e(strlen(strip_tags($item->name)) > 29 ? substr(strip_tags($item->name), 0, 29) : strip_tags($item->name)); ?>
 
+                                                   </div>
+                                                    <div class="hidden-md-up"> 
+                                                        <?php echo e(strlen(strip_tags($item->name)) > 25 ? substr(strip_tags($item->name), 0, 25) : strip_tags($item->name)); ?>
+
+                                                   </div>
                                             </a></h3>
                                             <div class="rating-stars">
                                                 <?php echo renderStarRating($item->reviews->avg('rating')); ?>
@@ -132,6 +143,7 @@
                     <div class="card">
                         <div class="card-body text-center">
                             <h4 class="h4 mb-0"><?php echo e(__('No Product Found')); ?></h4>
+                            <br/>
                         </div>
                     </div>
                 </div>
@@ -151,5 +163,4 @@
 
 
 
-        <?php echo $__env->make('front.common.counter', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php /**PATH /opt/lampp/htdocs/testingindus/core/resources/views/front/catalog/catalog.blade.php ENDPATH**/ ?>

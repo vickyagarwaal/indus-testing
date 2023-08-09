@@ -26,6 +26,11 @@
             return $html;
         }
     @endphp
+@include('front.common.slider')
+
+
+
+
 
 
 @endsection

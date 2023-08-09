@@ -34,7 +34,11 @@
                                             <div class="product-card-inner">
                                             <div class="product-card-body">
                                                 <h3 class="product-title"><a href="{{route('front.product',$item->slug)}}">
-                                                    {{ strlen(strip_tags($item->name)) > 35 ? substr(strip_tags($item->name), 0, 35) : strip_tags($item->name) }}
+                                                     <div class="hidden-sm-down"> {{ strlen(strip_tags($item->name)) > 20 ? substr(strip_tags($item->name), 0, 20) : strip_tags($item->name) }}
+                                                   </div>
+                                                    <div class="hidden-md-up"> 
+                                                        {{ strlen(strip_tags($item->name)) > 20 ? substr(strip_tags($item->name), 0, 20) : strip_tags($item->name) }}
+                                                   </div>
                                                 </a></h3>
                                                 <!--<div class="rating-stars">
                                                     {!! renderStarRating($item->reviews->avg('rating')) !!}

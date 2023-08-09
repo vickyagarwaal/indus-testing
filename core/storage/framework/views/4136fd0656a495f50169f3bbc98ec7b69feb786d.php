@@ -15,9 +15,9 @@
         }
     ?>
 
- 
 
 
+   
     <?php if(in_array('Manage Orders',$section)): ?>
     <li class="nav-item <?php echo e(request()->is('orders/*') ? 'submenu' : ''); ?>">
         <a data-toggle="collapse" href="#order">
@@ -58,13 +58,35 @@
     </li>
     <?php endif; ?>
 
-     
+   
 
+    <?php if(in_array('Transactions',$section)): ?>
+    <li class="nav-item">
+        <a  href="<?php echo e(route('back.transaction.index')); ?>">
+            <i class="fas fa-random"></i>
+          <p>Transaction</p>
+        </a>
+    </li>
+    <?php endif; ?>
 
+    <li class="nav-item">
+        <a  href="<?php echo e(url('admin/setting/payment')); ?>">
+            <i class="fas fa-random"></i>
+          <p>Payment Gateway</p>
+        </a>
+    </li>
 
 
   
 
-   
+  
+
+    <li class="nav-item">
+        <a href="<?php echo e(route('front.cache.clear')); ?>">
+            <i class="fas fa-broom"></i>
+            <p><?php echo e(__('Cache Clear')); ?></p>
+        </a>
+    </li>
+
 </ul>
 <?php /**PATH /opt/lampp/htdocs/testingindus/core/resources/views/master/inc/normal.blade.php ENDPATH**/ ?>

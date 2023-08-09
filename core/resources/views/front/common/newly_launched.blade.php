@@ -3,7 +3,7 @@
              <div class="row">
                     <div class="col-lg-12 ">
                         <div class="section-title section-title2 section-title3section-title section-title2 section-title3">
-                            <h2 class="h3">Newly Launched</h2>
+                            <h2 class="h3 text-center">Newly Arrived</h2>
                         </div>
                     </div>
                 </div>
@@ -13,9 +13,11 @@
                     </div>
                     <div class="col-lg-12" id="type_product_view">
 
-                        <div class="features-slider  owl-carousel" >
-                            @foreach ($products->orderBy('id','DESC')->get()  as $item)
-                                    <div class="slider-item">
+                        <div class="row" >
+                            @foreach ($products->orderBy('id','ASC')->get()  as $item)
+
+
+                                    <div class="slider-item col-sm-6 col-xs-6  col-md-3">
                                         <div class="product-card ">
                                             <div class="product-thumb">
                                                 @if (!$item->is_stock())
@@ -34,30 +36,34 @@
                                             <div class="product-card-inner">
                                             <div class="product-card-body">
                                                 <h3 class="product-title"><a href="{{route('front.product',$item->slug)}}">
-                                                    {{ strlen(strip_tags($item->name)) > 35 ? substr(strip_tags($item->name), 0, 35) : strip_tags($item->name) }}
+                                                   <div class="hidden-sm-down"> {{ strlen(strip_tags($item->name)) > 29 ? substr(strip_tags($item->name), 0, 29) : strip_tags($item->name) }}
+                                                   </div>
+                                                    <div class="hidden-md-up"> 
+                                                        {{ strlen(strip_tags($item->name)) > 25 ? substr(strip_tags($item->name), 0, 25) : strip_tags($item->name) }}
+                                                   </div>
                                                 </a></h3>
                                                 <!--<div class="rating-stars">
                                                     {!! renderStarRating($item->reviews->avg('rating')) !!}
                                                 </div>-->
                                                 <h4 class="product-price">
-                                                @if ($item->previous_price != 0)
+                                               <?php /* @if ($item->previous_price != 0)
                                                 <del>{{PriceHelper::setPreviousPrice($item->previous_price)}}</del>
-                                                @endif 
+                                                @endif  */ ?>
 
                                                 @if($item->previous_price && $item->previous_price !=0)
-                                            <span style="color:green">{{PriceHelper::DiscountPercentage($item)}} off  </span>
+                                            <span >{{PriceHelper::DiscountPercentage($item)}} off  </span>
                                                 @endif
                                                 {{PriceHelper::grandCurrencyPrice($item)}}
 
                                                  
                                                 </h4>
 <br/>
-                                                 @if ($item->is_stock())
-    <a class="product-button add_to_single_cart btn-grad   btn-block "  data-target="{{ $item->id }}" href="javascript:;"  title="{{__('To Cart')}}"><i class="icon-shopping-cart"></i> Add to Cart
+                                          <?php /*      @if ($item->is_stock())
+  <a class="product-button add_to_single_cart btn-grad   btn-block "  data-target="{{ $item->id }}" href="javascript:;"  title="{{__('To Cart')}}"><i class="icon-shopping-cart"></i> Add to Cart
     </a>
     @else
     <a class="product-button btn  btn-grad btn-block mt-2" href="{{route('front.product',$item->slug)}}" title="{{__('Details')}}"><i class="icon-arrow-right"></i> Add to Cart</a>
-    @endif
+    @endif */ ?>
                                             </div>
 
                                             </div>
@@ -66,7 +72,15 @@
                             @endforeach
                         </div>
                     </div>
+<div class="col-sm-12 text-center">
+                      <br/>                        
+ <div class="p-action-button">
+  <a href="{{url('products')}}" class=" btn-primary2 m-0 a-t-c-mr" id="add_to_cart">View All</a>
+                                                              
+                            </div>
+                            <br/>
 
+                        </div>
                 </div>
             </div>
         </section>

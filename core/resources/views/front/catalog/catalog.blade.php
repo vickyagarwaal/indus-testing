@@ -50,8 +50,13 @@
                         <div class="product-card-body">
                             
                             <h3 class="product-title"><a href="{{route('front.product',$item->slug)}}">
-                                {{ strlen(strip_tags($item->name)) > $name_string_count ? substr(strip_tags($item->name), 0, 38) : strip_tags($item->name) }}
-                            </a></h3>
+
+ <div class="hidden-sm-down"> {{ strlen(strip_tags($item->name)) > 29 ? substr(strip_tags($item->name), 0, 29) : strip_tags($item->name) }}
+                                                   </div>
+                                                    <div class="hidden-md-up"> 
+                                                        {{ strlen(strip_tags($item->name)) > 25 ? substr(strip_tags($item->name), 0, 25) : strip_tags($item->name) }}
+                                                   </div>
+                                                                               </a></h3>
                             
                             <h4 class="product-price">
                                 @if ($item->previous_price !=0)
@@ -100,7 +105,11 @@
                                         <div class="product-card-body">
                                             <div class="product-category"><a href="{{route('front.catalog').'?category='.$item->category->slug}}">{{$item->category->name}}</a></div>
                                             <h3 class="product-title"><a href="{{route('front.product',$item->slug)}}">
-                                                {{ strlen(strip_tags($item->name)) > $name_string_count ? substr(strip_tags($item->name), 0, 52) .'...': strip_tags($item->name) }}
+                                                <div class="hidden-sm-down"> {{ strlen(strip_tags($item->name)) > 29 ? substr(strip_tags($item->name), 0, 29) : strip_tags($item->name) }}
+                                                   </div>
+                                                    <div class="hidden-md-up"> 
+                                                        {{ strlen(strip_tags($item->name)) > 25 ? substr(strip_tags($item->name), 0, 25) : strip_tags($item->name) }}
+                                                   </div>
                                             </a></h3>
                                             <div class="rating-stars">
                                                 {!! renderStarRating($item->reviews->avg('rating')) !!}
@@ -127,6 +136,7 @@
                     <div class="card">
                         <div class="card-body text-center">
                             <h4 class="h4 mb-0">{{ __('No Product Found') }}</h4>
+                            <br/>
                         </div>
                     </div>
                 </div>
@@ -145,4 +155,3 @@
 
 
 
-        @include('front.common.counter')

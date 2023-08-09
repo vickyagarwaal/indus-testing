@@ -10,16 +10,20 @@
 @endsection
 
 @section('content')
-<div class="page-title">
+
+@include('front.common.bradcum_banner')
+
+
+  <div class="page-title">
     <div class="container">
       <div class="row">
           <div class="col-lg-12">
             <ul class="breadcrumbs">
-                <li><a href="{{route('front.index')}}">{{__('Home')}}</a>
+                <li><a href="{{route('front.index')}}">{{__('Home')}}</a> </li>
+                <li class="separator"></li>
+<li><a href="{{route('front.catalog')}}">Shop All Products</a>
                 </li>
                 <li class="separator"></li>
-                <li><a href="{{route('front.campaign')}}">{{__('Campaign Products')}}</a>
-                </li>
               </ul>
           </div>
       </div>
@@ -49,8 +53,9 @@
     <div class="deal-of-day-section pb-5">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12">  <br/>
                     <div class="section-title">
+
                         <h2 class="h3">{{ $setting->campaign_title }}</h2>
                         <div class="right-area">
                                 <div class="countdown countdown-alt" data-date-time="{{$setting->campaign_end_date}}"></div>
@@ -95,23 +100,24 @@
                             <a data-target="{{route('fornt.compare.product',$compaign_item->item->id)}}" class="product-button product_compare" href="javascript:;" title="{{__('Compare')}}"><i class="icon-repeat"></i></a>
                             @include('includes.item_footer',['sitem' => $compaign_item->item])
                         </div>
-                    </div>
+                    </div> 
                     <div class="product-card-body">
 
-                        <div class="product-category"><a href="{{route('front.catalog').'?category='.$compaign_item->item->category->slug}}">{{$compaign_item->item->category->name}}</a></div>
+
                         <h3 class="product-title"><a href="{{route('front.product',$compaign_item->item->slug)}}">
-                            {{ strlen(strip_tags($compaign_item->item->name)) > 35 ? substr(strip_tags($compaign_item->item->name), 0, 35) : strip_tags($compaign_item->item->name) }}
+                            {{ strlen(strip_tags($compaign_item->item->name)) > 29 ? substr(strip_tags($compaign_item->item->name), 0, 29) : strip_tags($compaign_item->item->name) }}
                         </a></h3>
-                        <div class="rating-stars">
-                            {!! renderStarRating($compaign_item->item->reviews->avg('rating')) !!}
-                        </div>
+                        
                         <h4 class="product-price">
                         @if ($compaign_item->item->previous_price != 0)
                         <del>{{PriceHelper::setPreviousPrice($compaign_item->item->previous_price)}}</del>
-                        @endif
+                        @endif @if($compaign_item->item->previous_price && $compaign_item->item->previous_price !=0)
+                                            <span style="color:green;font-size:15pt">{{PriceHelper::DiscountPercentage($compaign_item->item)}} off  </span>
+                                                @endif
                         {{PriceHelper::grandCurrencyPrice($compaign_item->item)}}
                         </h4>
-
+   
+    <a class="product-button btn  btn-grad btn-block mt-2" href="{{route('front.product',$compaign_item->item->slug)}}" title="{{__('Details')}}"><i class="icon-arrow-right"></i> View Product</a>
                     </div>
 
                 </div>

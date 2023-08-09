@@ -556,20 +556,24 @@
                                                                 <div class="col-lg-12">
 
                                                                         <div class="form-group">
-                                                                            <label for="footer_address">{{ __('Store Address') }} *</label>
+                                                                            <label for="footer_address">{{ __('Office Address') }} *</label>
                                                                             <input type="text" name="footer_address" class="form-control" id="footer_address"
                                                                                 placeholder="{{ __('Store Address') }}" value="{{ $setting->footer_address }}" >
                                                                         </div>
 
                                                                         <div class="form-group">
-                                                                            <label for="footer_phone">{{ __('Store Phone Number') }} *</label>
+                                                                            <label for="footer_phone">{{ __('Toll Free Number') }} *</label>
                                                                             <input type="text" name="footer_phone" class="form-control" id="footer_phone"
-                                                                                placeholder="{{ __('Store Phone Number') }}" value="{{ $setting->footer_phone }}" >
+                                                                                placeholder="{{ __('Toll Free Number') }}" value="{{ $setting->footer_phone }}" >
                                                                         </div>
 
-
+ <div class="form-group">
+                                                                            <label for="support_phone">{{ __('Support Number') }} *</label>
+                                                                            <input type="text" name="support_phone" class="form-control" id="support_phone"
+                                                                                placeholder="{{ __('Support  Number') }}" value="{{ $setting->support_phone }}" >
+                                                                        </div>
                                                                         <div class="form-group">
-                                                                            <label for="footer_email">{{ __('Store Email') }} *</label>
+                                                                            <label for="footer_email">{{ __('Email') }} *</label>
                                                                             <input type="email" name="footer_email" class="form-control" id="footer_email"
                                                                                 placeholder="{{ __('Store Email') }}" value="{{ $setting->footer_email }}" >
                                                                         </div>

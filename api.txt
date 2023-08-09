@@ -1,14 +1,16 @@
-Shiprocket.in API User Details:-
 
 
-Website: shiprocket.in
+* Payment Paytm Gateway Api:-
 
-vickyaggarwal74@gmail.com	
+Test Merchant ID- lqnxfW16572266214332
+Test Merchant Key- 1nmIzrbP1mQ%ZC9c
+Website- WEBSTAGING
+Industry Type- Retail
+Channel ID (For Website)- WEB
 
-Pass: vickyaggarwal7476%#
+(Already Updated in Admin panel in payment gateway tab)
 
-API Link:- https://apidocs.shiprocket.in/?_gl=1*k2nsmf*_gcl_au*ODk5MTczMzA2LjE2ODk3NDY1MDE.
-
+* I will send email gateway credentials tomorrow.
 
 
 
@@ -18,25 +20,34 @@ Our Ecommerce Website Credentials:-
 
 URl: http://localhost/testingindus/admin/login
 
-Email: testing@gmail.com
+Email: admintesting@gmail.com
 
-Pass: testing76%#
-
-Order Page:- http://localhost/testingindus/admin/orders
-
-I want to integrate shiprocket api in order page when admin change order status from 
-"Pending" to "In Progress"
+Pass: admintesting765%
 
 
 
 2). Customer Panel Login:-
 
-Login:- http://localhost/testingindus/login
+Login:- http://localhost/testingindus/user/login
 
-Email: upensuni@gmail.com
+Email: testing@gmail.com
 
-Pass: upensuni12
+Pass: testing76%#
 
-Order Page:- http://localhost/testingindus/user/orders
 
-I want to integrate shiprocket api, in customer order page when customer cancel order from their panel. 
+Regsiter Page: -http://localhost/testingindus/user/register
+
+You need to setup the this project first.
+
+
+1).  And then kindly login as a customer with the credentials provided, add 1 prodcut to the cart and move to the checkout page, after processing you will see payment option of paytm there is the issue i see payment failed. Kindly check i have set all the details in admin panel you can login the admin panel with the above credentials (Payment Gateway Tab). You will find all the routes, model and controller in their respective folder. Kindly go thorugh it
+
+2). Second i need to integrate email with otp or login only after verification. in signup page http://localhost/testingindus/user/register  i will guide you. 
+
+
+If you need any help feel free to contact me anytime.
+
+
+
+
+

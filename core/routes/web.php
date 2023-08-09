@@ -313,9 +313,10 @@ Route::group(['middleware' => 'maintainance'], function () {
 
             //------------ AUTH ------------
             Route::get('/login', 'Auth\User\LoginController@showForm')->name('user.login');
+
             Route::post('/login-submit', 'Auth\User\LoginController@login')->name('user.login.submit');
             Route::get('/logout', 'Auth\User\LoginController@logout')->name('user.logout');
-            Route::get('/remove/account', 'User\AccountController@removeAccount')->name('user.account.remove');
+           // Route::get('/remove/account', 'User\AccountController@removeAccount')->name('user.account.remove');
 
             //------------ REGISTER ------------
             Route::get('/register', 'Auth\User\RegisterController@showForm')->name('user.register');
@@ -373,13 +374,16 @@ Route::group(['middleware' => 'maintainance'], function () {
         Route::get('/', 'Front\FrontendController@index')->name('front.index');
         Route::get('/extra-index', 'Front\FrontendController@extraIndex')->name('front.extraindex');
         Route::get('/product/{slug}', 'Front\FrontendController@product')->name('front.product');
-        Route::get('/campaign/products', 'Front\FrontendController@compaignProduct')->name('front.campaign');
+        Route::get('/times-quartz/special-offer', 'Front\FrontendController@compaignProduct')->name('front.campaign');
         Route::get('/blog', 'Front\FrontendController@blog')->name('front.blog');
         Route::get('/brands', 'Front\FrontendController@brands')->name('front.brand');
         Route::get('/blog/{slug}', 'Front\FrontendController@blogDetails')->name('front.blog.details');
         Route::get('/faq', 'Front\FrontendController@faq')->name('front.faq');
         Route::get('/faq/{slug}', 'Front\FrontendController@show')->name('front.faq.details');
         Route::get('/contact', 'Front\FrontendController@contact')->name('front.contact');
+        Route::get('/page/where-to-buy', 'Front\FrontendController@buy_From')->name('front.buy_From');
+
+
         Route::post('/contact/submit', 'Front\FrontendController@contactEmail')->name('front.contact.submit');
         Route::get('/reviews', 'Front\FrontendController@reviews')->name('front.reviews');
         Route::get('/review/page', 'Front\FrontendController@review_submit')->name('front.rev.page');
@@ -456,7 +460,8 @@ Route::group(['middleware' => 'maintainance'], function () {
         })->name('front.cache.clear');
 
         //------------ PAGE ------------
-    // Route::get('/{slug}', 'Front\FrontendController@page')->name('front.page');
+     //Route::get('/{slug}', 'Front\FrontendController@page')->name('front.page');
+
 
         // ************************************ FRONTEND ENDS**********************************************
 
@@ -465,3 +470,13 @@ Route::group(['middleware' => 'maintainance'], function () {
     });
 });
 Route::get('/website/maintainance', 'Front\FrontendController@maintainance')->name('front.maintainance');
+
+
+
+
+Route::get('/ok/clear-cache', function () {
+   Artisan::call('cache:clear');
+   Artisan::call('route:clear');
+
+   return "Cache cleared successfully";
+});

@@ -465,6 +465,7 @@ var $dashboard_product = $(".dashboard-product");
              autoplayTimeout: 450,
             smartSpeed: 1200,
             loop: true,
+            
             thumbs: false,
             margin: 15,
             responsive: {
@@ -488,6 +489,40 @@ var $dashboard_product = $(".dashboard-product");
                 }
             },
         });
+
+
+          var $categories_slider = $(".categories-testimonial");
+        $categories_slider.owlCarousel({
+            navText: [],
+            nav: true,
+            dots: false,
+            autoplay:true,
+             autoplayTimeout: 450,
+            smartSpeed: 1200,
+            loop: true,
+            thumbs: false,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                575: {
+                    items: 2,
+                },
+                790: {
+                    items: 2,
+                },
+                1100: {
+                    items: 4,
+                },
+                1200: {
+                    items: 3,
+                },
+                1400: {
+                    items: 3,
+                }
+            },
+        });
+
 
         // toprated-slider Area Start
         var $relatedproductsliderv = $(".relatedproductslider");

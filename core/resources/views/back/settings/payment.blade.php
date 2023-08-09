@@ -424,7 +424,14 @@
 
                                                         @foreach($paytmData as $pkey => $paytmData)
 
-                                                        @if($pkey == 'paytm_mode')
+                                                        @if($pkey == 'paytm')
+
+
+                                                       
+
+
+
+
                                                                 <div class="form-group  col-xl-4 col-md-6">
                                                                     <div class="custom-control custom-checkbox">
                                                                         <input type="checkbox" name="pkey[{{ __($pkey) }}]" class="custom-control-input" {{ $paytmData == 1  ? 'checked' : '' }} id="{{ $pkey }}">
@@ -438,7 +445,7 @@
 
                                                                 <div class="form-group">
                                                                     <label for="inp-{{ __($pkey) }}">{{ __( $paytm->name.' '.ucwords(str_replace('_',' ',$pkey)) ) }}</label>
-                                                                    <input type="text" class="form-control" id="inp-{{ __($pkey) }}" name="pkey[{{ __($pkey) }}]"  placeholder="{{ __( $paytm->name.' '.ucwords(str_replace('_',' ',$pkey)) ) }}" value="{{ $pdata }}" >
+                                                                    <input type="text" class="form-control" id="inp-{{ __($pkey) }}" name="pkey[{{ __($pkey) }}]"  placeholder="{{ __( $paytm->name.' '.ucwords(str_replace('_',' ',$pkey)) ) }}" value="{{ $paytmData }}" >
                                                                 </div>
 
                                                             @endif

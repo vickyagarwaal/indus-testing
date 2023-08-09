@@ -32,6 +32,7 @@ class CatalogController extends Controller
 	public function index(Request $request)
 	{
 
+
         // attribute search
         $attr_item_ids = [];
         if($request->attribute){
@@ -189,6 +190,7 @@ class CatalogController extends Controller
             'brand' => $brand,
             'items' => $items,
             'name_string_count' => $name_string_count,
+           // 'sluggg'=>Category::whereSlug($request->category)->firstOrFail(),
             'category' => $category,
             'subcategory' => $subcategory,
             'childcategory' => $childcategory,

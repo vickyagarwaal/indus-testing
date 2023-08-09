@@ -3,6 +3,9 @@
 
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
+
+<?php echo $__env->make('front.common.bradcum_banner', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
     <!-- Page Title-->
 <div class="page-title">
     <div class="container">
@@ -15,6 +18,8 @@
       </div>
     </div>
   </div>
+
+
   <!-- Page Content-->
   <div class="container padding-bottom-3x mb-1  checkut-page">
     <div class="row">

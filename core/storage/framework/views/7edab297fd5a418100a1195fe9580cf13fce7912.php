@@ -2,8 +2,8 @@
             <div class="background"></div>
             <div class="heroarea-slider owl-carousel">
                 <?php $__currentLoopData = $sliders; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $slider): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <div class="item" style="background: url('<?php echo e(asset('assets/images/' . $slider->photo)); ?>')">
-                  
+                <div class="item" >
+                  <img src="<?php echo e(asset('assets/images/' . $slider->photo)); ?>">
                 </div>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>

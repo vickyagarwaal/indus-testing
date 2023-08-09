@@ -38,7 +38,7 @@
 .toprated-slider.owl-carousel .owl-nav div:hover,
 .btn
 {
- background: #d0391c !important;}
+ background: #2c2c2c !important;}
 
 .site-header .toolbar .toolbar-item > a > div > .compare-icon > .count-label, .site-header .toolbar .toolbar-item > a > div > .cart-icon > .count-label,
 .btn-primary,
@@ -160,8 +160,8 @@ a.list-group-item:hover,
     color: <?php echo $color?>;
 }
 .shop-view > a.active {
-    border-color: <?php echo $color?>;
-    background-color: <?php echo $color?>;
+    border-color: #000;
+    background-color: #000;
 }
 .custom-control .custom-control-input:checked ~ .custom-control-label::before {
     border-color: <?php echo $color?>;

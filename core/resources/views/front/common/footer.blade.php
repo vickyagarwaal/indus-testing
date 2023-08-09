@@ -1,9 +1,6 @@
 
 
-<!-- Back To Top Button-->
-<a class="scroll-to-top-btn" href="#">
-    <i class="icon-chevron-up"></i>
-</a>
+
 <!-- Backdrop-->
 <div class="site-backdrop"></div>
 
@@ -37,8 +34,19 @@
         Sec : '{{__('Sec')}}',
     }
 
-</script>
+  
 
+</script>
+<script>
+    
+      var mainDiv = document.getElementById('main-button');
+mainDiv.addEventListener('click', function(){
+  this.children.item(0).classList.toggle('fa-headphones');
+  this.classList.toggle('open');
+});
+
+
+</script>
 
 
 <!-- JavaScript (jQuery) libraries, plugins and custom scripts-->
@@ -49,7 +57,20 @@
 <script type="text/javascript" src="{{asset('assets/front/js/lazy.plugin.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/front/js/myscript.js')}}"></script>
 @yield('script')
+<script>
 
+    $(function(){
+  $(".search_o").click(function(){
+    $(".cover").fadeIn("300");
+  })
+  $(".cover,.close").click(function(){
+    $(".cover").fadeOut("300");
+  })
+  $(".contents").click(function(e){
+    e.stopPropagation();
+  })
+})
+</script>
 @if($setting->is_facebook_messenger == '1')
  {!!  $setting->facebook_messenger !!}
 @endif
@@ -165,7 +186,7 @@ window.onresize=function(){if(this.innerWidth>991){if(menu.classList.contains('a
 
 @if (Request::path() == '/')
 
-<script>
+<!--<script>
     $(document).ready(function(){
       $(window).scroll(function() { // check if scroll event happened
         if ($(document).scrollTop() > 50) { // check if user scrolled more than 50 from top of the browser window
@@ -190,7 +211,7 @@ window.onresize=function(){if(this.innerWidth>991){if(menu.classList.contains('a
         }
       });
     });
-</script>
+</script> -->
 
 @else
 
@@ -218,6 +239,8 @@ window.onresize=function(){if(this.innerWidth>991){if(menu.classList.contains('a
         }
       });
     });
+
+
 </script>
 @endif
 </body>

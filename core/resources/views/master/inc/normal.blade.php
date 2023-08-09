@@ -15,9 +15,9 @@
         }
     @endphp
 
- 
 
 
+   
     @if (in_array('Manage Orders',$section))
     <li class="nav-item {{ request()->is('orders/*') ? 'submenu' : '' }}">
         <a data-toggle="collapse" href="#order">
@@ -58,12 +58,34 @@
     </li>
     @endif
 
-     
+   
 
+    @if (in_array('Transactions',$section))
+    <li class="nav-item">
+        <a  href="{{ route('back.transaction.index') }}">
+            <i class="fas fa-random"></i>
+          <p>Transaction</p>
+        </a>
+    </li>
+    @endif
 
+    <li class="nav-item">
+        <a  href="{{ url('admin/setting/payment') }}">
+            <i class="fas fa-random"></i>
+          <p>Payment Gateway</p>
+        </a>
+    </li>
 
 
   
 
-   
+  
+
+    <li class="nav-item">
+        <a href="{{ route('front.cache.clear') }}">
+            <i class="fas fa-broom"></i>
+            <p>{{ __('Cache Clear') }}</p>
+        </a>
+    </li>
+
 </ul>

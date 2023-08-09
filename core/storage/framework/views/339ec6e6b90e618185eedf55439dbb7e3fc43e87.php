@@ -4,12 +4,14 @@
             <div class="user_card">
                 <div class="d-flex justify-content-center">
                     <div class="brand_logo_container">
+                        <img src=" <?php echo e(asset('assets/images/times-quartz-admin.png')); ?>" class="brand_logo" alt="Logo">
                     </div>
                 </div>
                 <div class="d-flex justify-content-center form_container">
                     <form action="<?php echo e(route('back.login.submit')); ?>" method="POST">
 
                          <?php echo csrf_field(); ?>
+<h4 class="text-center"><b>TimesQuartz</b></h4>
 <h5 class="text-center"> Admin Panel</h5>
 
 <br/>

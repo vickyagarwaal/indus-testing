@@ -34,8 +34,13 @@
                                             <div class="product-card-inner">
                                             <div class="product-card-body">
                                                 <h3 class="product-title"><a href="<?php echo e(route('front.product',$item->slug)); ?>">
-                                                    <?php echo e(strlen(strip_tags($item->name)) > 35 ? substr(strip_tags($item->name), 0, 35) : strip_tags($item->name)); ?>
+                                                     <div class="hidden-sm-down"> <?php echo e(strlen(strip_tags($item->name)) > 20 ? substr(strip_tags($item->name), 0, 20) : strip_tags($item->name)); ?>
 
+                                                   </div>
+                                                    <div class="hidden-md-up"> 
+                                                        <?php echo e(strlen(strip_tags($item->name)) > 20 ? substr(strip_tags($item->name), 0, 20) : strip_tags($item->name)); ?>
+
+                                                   </div>
                                                 </a></h3>
                                                 <!--<div class="rating-stars">
                                                     <?php echo renderStarRating($item->reviews->avg('rating')); ?>

@@ -34,7 +34,8 @@ class CartController extends Controller
             $cart = [];
         }
         return view('front.catalog.cart',[
-            'cart' => $cart
+            'cart' => $cart,
+            
         ]);
     }
     

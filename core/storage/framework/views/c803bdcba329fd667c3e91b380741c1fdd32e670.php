@@ -1,11 +1,22 @@
+<div class="wrapper">
+<div id="main-div">
+<div id="main-button" class="wave open">
+<i class="fa fa-times"></i>
+</div>
+<a href="<?php echo e(url('contact')); ?>" title="Call Now" class="telegram-color wave"><i class="fa fa-paper-plane"></i></a>
+<a target="_blank" href="https://api.whatsapp.com/send?phone=<?php echo e($setting->support_phone); ?>&amp;text=Hi,%20TimesQuartz%20Team,%20I%20want%20to%20contact%20you%20for%20" class="whatsapp-color wave"><i class="fab fa-whatsapp"></i></a>
+<a href="tel:<?php echo e($setting->footer_phone); ?>" class="messenger-color wave"><i class="fa fa-phone"></i></a>
+</div>
+</div>
+
 <div class="fastest_Growing text-center">
 
         <div class="container">
 
 <div class="row">
-    <div class="col-md-8 offset-md-2">
+    <div class="col-md-10 offset-md-1">
 
-<p>India's Leading & Fastet growing Watch & Bagpacks brand. We offers vast range of Mens/Women Watches, Trolley Bags, Duffle Bags & Smart watches. From workouts to adventures, We will get you sailing!
+<p>India's leading & fastet growing Watch & Bagpacks brand. We offers vast range of Mens/Women Watches, Trolley Bags, Rucksack & Duffle Bags. Crafting Trends, Packing Futures: Your Go-To Destination for Watches & Bagpacks.
 </p>
 </div>
 </div>
@@ -19,12 +30,12 @@
                 <div class="col-lg-12 ">
 
       <div class="row">
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-3 col-md-6 col-gd">
           <!-- Contact Info-->
           <section class="widget widget-links widget-light-skin">
-            <a href="<?php echo e(route('front.index')); ?>" class="brand"><img width="70%" src="<?php echo e(asset('assets/images/'.$setting->logo)); ?>" alt="<?php echo e($setting->title); ?>"></a>
+           <!-- <a href="<?php echo e(route('front.index')); ?>" class="brand"><img width="70%" src="<?php echo e(asset('assets/images/'.$setting->logo)); ?>" alt="<?php echo e($setting->title); ?>"></a>
 <br/>
-           <br/>
+           <br/> -->
             <h3 class="widget-title">About Company</h3>
             <ul>
 
@@ -32,75 +43,62 @@
                                             <li><a href="<?php echo e(url('about-us')); ?>">About us</a>
                                            <li><a href="<?php echo e(url('career')); ?>">Careers</a>
                                            <li><a href="<?php echo e(url('terms-and-condition')); ?>">Terms & Condition</a>
-                                         <li><a href="<?php echo e(url('privacy-policy')); ?>">Privacy Policy</a>
-               
+                                         <li><a href="<?php echo e(url('privacy-policy')); ?>">Privacy Policy</a></li>
+                                 <li>  <a class="" href="<?php echo e(url('corporate-enquiries')); ?>">Corporate Enquiries</a></li>
+
               
 
             </ul>
           </section>
         </div>
 
-         <div class="col-lg-3 col-sm-6 col-gd">
+      <div class="col-lg-3 col-sm-6 col-gd">
           <!-- Customer Info-->
-          <div class="widget widget-links widget-light-skin">
-            <h3 class="widget-title">Our Products</h3>
+          <div class="widget widget-links widget-light-skin custome">
+
+
+
+            <h3 class="widget-title ">Useful Links</h3>
             <ul>
-                                                           <li><a href="<?php echo e(url('/products')); ?>">Browse All Products</a></li>
 
- <?php $__currentLoopData = DB::table('categories')->whereStatus(1)->get(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
-                                <li>  <a href="<?php echo e(route('front.catalog').'?category='.$category->slug); ?>"><?php echo e($category->name); ?></a> 
-                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-            </ul>
-
-                        <h3 class="widget-title mt-20">For Enquiry</h3>
-
-<ul>
-
-                 <li>
-                    <a class="" href="<?php echo e(url('corporate-enquiries')); ?>">Corporate Enquiries</a>
-                </li>
+                
+ <li><a href="<?php echo e(url('faq')); ?>">FAQs</a></li>
+                                            <li><a href="<?php echo e(url('return-policy')); ?>">Return Policy</a>
+                                           <li><a href="<?php echo e(url('refund-policy')); ?>">Refund Policy</a>
+                                           <li><a target="_blank" href="https://timesquartz.shiprocket.co/">Track Order</a>
+                                         <li><a href="<?php echo e(url('shipping-policy')); ?>">Shipping Policy  </a>
                
+                <li>
+                    <a class="" href="<?php echo e(url('/page/where-to-buy')); ?>">Where To Buy?</a>
+                </li>
 
+                
             </ul>
+          
+
             
           </div>
         </div>
-        <div class="col-lg-3 col-sm-6 col-gd">
+        <div class="col-lg-3 col-sm-6 ">
           <!-- Customer Info-->
-          <div class="widget widget-links widget-light-skin custome">
+          <div class="widget widget-links widget-light-skin ">
 
               <h3 class="widget-title">Customer Care</h3>
 
 
              <ul>
 <li>Operating Hours: : 10 AM to 6 PM (Mon-Sat)</li>
-                <li> Enquiry Number: <a class="underline" href="tel:<?php echo e($setting->footer_phone); ?>"><?php echo e($setting->footer_phone); ?></a></li>
+                <li> Toll Free: <a class="underline" href="tel:<?php echo e($setting->footer_phone); ?>"><?php echo e($setting->footer_phone); ?></a></li>
 
                 
- <li> Support Number: <a class="underline" href="tel:+919661334555">+91 9661334555</a></li>
+ <li> Support Number: <a class="underline"href="tel:<?php echo e($setting->support_phone); ?>"><?php echo e($setting->support_phone); ?></a></li>
   <li>Email: <a class="underline" href="mailto:<?php echo e($setting->footer_email); ?>"><?php echo e($setting->footer_email); ?></a></li>
-  <li> Want Help? <a class="underline" href="https://api.whatsapp.com/send?phone=%20+919661334555&text=Hi,%20TimesQuartz%20Team,%20I%20want%20to%20contact%20you%20for%20"><b>Click Here</b></a> to Chat With us on Whatsapp <i class="fab fa-whatsapp"></i> </li>
+  <li> Want Help? <a class="underline" href="https://api.whatsapp.com/send?phone=%20<?php echo e($setting->support_phone); ?>&text=Hi,%20TimesQuartz%20Team,%20I%20want%20to%20contact%20you%20for%20"><b>Click Here</b></a> to Chat With us on Whatsapp <i class="fab fa-whatsapp"></i> </li>
 
                
 
             </ul>
-            <h3 class="widget-title mt-20">Support</h3>
-            <ul>
-
-                
- <li><a href="<?php echo e(url('faq')); ?>">Faqs</a></li>
-                                            <li><a href="<?php echo e(url('return-policy')); ?>">Return Policy</a>
-                                           <li><a href="<?php echo e(url('refund-policy')); ?>">Refund Policy</a>
-                                           <li><a href="<?php echo e(url('track/order')); ?>">Track Order</a>
-                                         <li><a href="<?php echo e(url('warranty')); ?>">Warranty & Support</a>
-               
-                <li>
-                    <a class="" href="<?php echo e(url('/contact')); ?>">Contact Us</a>
-                </li>
-
-                
-            </ul>
+           
           
 
             
@@ -132,19 +130,17 @@
                 </div>
                 
               </form>
-               <?php
-            $links = json_decode($setting->social_link,true)['links'];
-            $icons = json_decode($setting->social_link,true)['icons'];
-
-          ?>
+             
+          <br/>
             <h5>Connect With Us !</h5>
-            <div class="footer-social-links">
+           <div class="footer-social-links">
 
-                <?php $__currentLoopData = $links; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $link_key => $link): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <a href="<?php echo e($link); ?>"><span><i class="<?php echo e($icons[$link_key]); ?>"></i></span></a>
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-            </div>
-              <div class="pt-3"><img class="d-block gateway_image" src="<?php echo e($setting->footer_gateway_img ? asset('assets/images/'.$setting->footer_gateway_img) : asset('system/resources/assets/images/placeholder.png')); ?>"></div>
+                                <a class="facebook" href="https://www.facebook.com/timesquartz"><span><i class="fab fa-facebook-f"></i></span></a>
+                                <a class="twitter" href="https://twitter.com/timesquartz"><span><i class="fab fa-twitter"></i></span></a>
+                                <a class="instagram" href="https://www.instagram.com/timesquartz/"><span><i class="fab fa-instagram"></i></span></a>
+                                <a class="linkedin-in" href=""><span><i class="fab fa-linkedin-in"></i></span></a>
+                            </div>
+              <!--<div class="pt-3"><img class="d-block gateway_image" src="<?php echo e($setting->footer_gateway_img ? asset('assets/images/'.$setting->footer_gateway_img) : asset('system/resources/assets/images/placeholder.png')); ?>"></div> -->
             </section>
           </div>
       </div>
@@ -156,10 +152,7 @@
     </div>
   </footer>
 
-<!-- Back To Top Button-->
-<a class="scroll-to-top-btn" href="#">
-    <i class="icon-chevron-up"></i>
-</a>
+
 <!-- Backdrop-->
 <div class="site-backdrop"></div>
 
@@ -193,8 +186,19 @@
         Sec : '<?php echo e(__('Sec')); ?>',
     }
 
-</script>
+  
 
+</script>
+<script>
+    
+      var mainDiv = document.getElementById('main-button');
+mainDiv.addEventListener('click', function(){
+  this.children.item(0).classList.toggle('fa-headphones');
+  this.classList.toggle('open');
+});
+
+
+</script>
 
 
 <!-- JavaScript (jQuery) libraries, plugins and custom scripts-->
@@ -205,7 +209,20 @@
 <script type="text/javascript" src="<?php echo e(asset('assets/front/js/lazy.plugin.js')); ?>"></script>
 <script type="text/javascript" src="<?php echo e(asset('assets/front/js/myscript.js')); ?>"></script>
 <?php echo $__env->yieldContent('script'); ?>
+<script>
 
+    $(function(){
+  $(".search_o").click(function(){
+    $(".cover").fadeIn("300");
+  })
+  $(".cover,.close").click(function(){
+    $(".cover").fadeOut("300");
+  })
+  $(".contents").click(function(e){
+    e.stopPropagation();
+  })
+})
+</script>
 <?php if($setting->is_facebook_messenger == '1'): ?>
  <?php echo $setting->facebook_messenger; ?>
 
@@ -322,7 +339,7 @@ window.onresize=function(){if(this.innerWidth>991){if(menu.classList.contains('a
 
 <?php if(Request::path() == '/'): ?>
 
-<script>
+<!--<script>
     $(document).ready(function(){
       $(window).scroll(function() { // check if scroll event happened
         if ($(document).scrollTop() > 50) { // check if user scrolled more than 50 from top of the browser window
@@ -347,7 +364,7 @@ window.onresize=function(){if(this.innerWidth>991){if(menu.classList.contains('a
         }
       });
     });
-</script>
+</script> -->
 
 <?php else: ?>
 
@@ -375,6 +392,8 @@ window.onresize=function(){if(this.innerWidth>991){if(menu.classList.contains('a
         }
       });
     });
+
+
 </script>
 <?php endif; ?>
 </body>
